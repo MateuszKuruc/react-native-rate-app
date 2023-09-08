@@ -1,4 +1,11 @@
-import { View, Text } from "react-native";
+import { View, Text, Image, StyleSheet } from "react-native";
+
+const styles = StyleSheet.create({
+  avatar: {
+    width: 50,
+    height: 50,
+  },
+});
 
 const RepositoryItem = ({
   fullName,
@@ -8,6 +15,7 @@ const RepositoryItem = ({
   stargazersCount,
   ratingAverage,
   reviewCount,
+  ownerAvatarUrl,
 }) => {
   return (
     <View>
@@ -18,6 +26,12 @@ const RepositoryItem = ({
       <Text>Forks: {forksCount}</Text>
       <Text>Reviews: {reviewCount}</Text>
       <Text>Rating: {ratingAverage}</Text>
+      <Image
+        source={{
+          uri: ownerAvatarUrl,
+        }}
+        style={styles.avatar}
+      ></Image>
     </View>
   );
 };
