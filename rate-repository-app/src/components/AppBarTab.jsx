@@ -1,22 +1,21 @@
-import { StyleSheet, Text, View } from "react-native-web";
+import { StyleSheet, Text, View } from "react-native";
 
 const styles = StyleSheet.create({
-    text: {
-        color: "white",
-        fontWeight: "bold",
-        fontSize: 18,
-      },
-})
-
-
+  text: {
+    color: "white",
+    fontWeight: "bold",
+    fontSize: 18,
+  },
+});
 
 const AppBarTab = ({ tabNames }) => {
-    // need to do map here and create tab for each name
-    return (
-<View>
-    <Text></Text>
-</View>>
-    )
-}
+  const tabs = tabNames;
+
+  return tabs.map((tab) => (
+    <View key={tab}>
+      <Text style={styles.text}>{tab}</Text>
+    </View>
+  ));
+};
 
 export default AppBarTab;
