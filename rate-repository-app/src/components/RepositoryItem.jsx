@@ -1,5 +1,6 @@
-import { View, Text, Image, StyleSheet, Button } from "react-native";
+import { View, Image, StyleSheet } from "react-native";
 import Constants from "expo-constants";
+import Text from "./Text";
 
 const styles = StyleSheet.create({
   container: {
@@ -39,12 +40,6 @@ const styles = StyleSheet.create({
     gap: 3,
     alignItems: "center",
   },
-  numbersDisplay: {
-    fontWeight: "bold",
-  },
-  resultsName: {
-    color: "grey",
-  },
 });
 
 const RepositoryItem = ({
@@ -64,7 +59,7 @@ const RepositoryItem = ({
       <View style={styles.upperWrapper}>
         <Image style={styles.avatar} source={{ uri: ownerAvatarUrl }}></Image>
         <View style={styles.upperRightWrapper}>
-          <Text style={{ fontWeight: "bold" }}>{fullName}</Text>
+          <Text fontWeight="bold">{fullName}</Text>
           <Text style={{ color: "grey" }}>{description}</Text>
           <View style={styles.languageWrapper}>
             <Text style={styles.languageInfo}>{language}</Text>
@@ -73,20 +68,20 @@ const RepositoryItem = ({
       </View>
       <View style={styles.bottomWrapper}>
         <View style={styles.numbersContainer}>
-          <Text style={styles.numbersDisplay}>{starsNumber}k</Text>
-          <Text style={styles.resultsName}>Stars</Text>
+          <Text fontWeight="bold">{starsNumber}k</Text>
+          <Text color="textSecondary">Stars</Text>
         </View>
         <View style={styles.numbersContainer}>
-          <Text style={styles.numbersDisplay}>{forksNumber}k</Text>
-          <Text style={styles.resultsName}>Forks</Text>
+          <Text fontWeight="bold">{forksNumber}k</Text>
+          <Text color="textSecondary">Forks</Text>
         </View>
         <View style={styles.numbersContainer}>
-          <Text style={styles.numbersDisplay}>{reviewCount}</Text>
-          <Text style={styles.resultsName}>Reviews</Text>
+          <Text fontWeight="bold">{reviewCount}</Text>
+          <Text color="textSecondary">Reviews</Text>
         </View>
         <View style={styles.numbersContainer}>
-          <Text style={styles.numbersDisplay}>{ratingAverage}</Text>
-          <Text style={styles.resultsName}>Rating</Text>
+          <Text fontWeight="bold">{ratingAverage}</Text>
+          <Text color="textSecondary">Rating</Text>
         </View>
       </View>
     </View>
