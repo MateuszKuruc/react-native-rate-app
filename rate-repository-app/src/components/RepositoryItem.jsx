@@ -10,21 +10,24 @@ const styles = StyleSheet.create({
     height: 50,
   },
   upperWrapper: {
-    display: "flex",
     flexDirection: "row",
+    borderWidth: 2,
   },
-  languageContainer: {
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#1877F2",
-    padding: 5,
+  upperRightWrapper: {
+    flexGrow: 0,
+    alignItems: "flex-start",
+    padding: 8,
+    gap: 3,
   },
   languageInfo: {
     color: "white",
-    fontWeight: "bold",
+    padding: 3,
   },
-  detailsContainer: {},
+  languageWrapper: {
+    backgroundColor: "#1877F2",
+    borderRadius: 3,
+  },
+  bottomWrapper: {},
 });
 
 const RepositoryItem = ({
@@ -38,27 +41,16 @@ const RepositoryItem = ({
   ownerAvatarUrl,
 }) => {
   return (
-    <View style={styles.container}>
-      <View style={styles.upperWrapper}>
-        <Image
-          source={{
-            uri: ownerAvatarUrl,
-          }}
-          style={styles.avatar}
-        ></Image>
-        <View style={styles.detailsContainer}>
-          <Text>{fullName}</Text>
-          <Text>{description}</Text>
-          <View style={styles.languageContainer}>
-            <Text style={styles.languageInfo}>{language}</Text>
-          </View>
+    <View style={styles.upperWrapper}>
+      <Image style={styles.avatar} source={{ uri: ownerAvatarUrl }}></Image>
+      <View style={styles.upperRightWrapper}>
+        <Text style={{ fontWeight: "bold" }}>{fullName}</Text>
+        <Text>{description}</Text>
+        <View style={styles.languageWrapper}>
+          <Text style={styles.languageInfo}>{language}</Text>
         </View>
       </View>
-
-      <Text>Stars: {stargazersCount}</Text>
-      <Text>Forks: {forksCount}</Text>
-      <Text>Reviews: {reviewCount}</Text>
-      <Text>Rating: {ratingAverage}</Text>
+      <View styles={styles.bottomWrapper}></View>
     </View>
   );
 };
