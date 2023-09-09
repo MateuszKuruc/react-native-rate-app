@@ -15,18 +15,23 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontSize: 18,
   },
-  tabContainer: {
-    flexDirection: "row",
-    gap: 12,
-  },
 });
 
 const AppBar = () => {
-  const tabNames = ["Repositories", "Sign in"];
+  const tabData = [
+    {
+      name: "Repositories",
+      path: "/",
+    },
+    {
+      name: "Sign in",
+      path: "/signin",
+    },
+  ];
   return (
     <View style={styles.container}>
-      <Pressable style={styles.tabContainer}>
-        <AppBarTab tabNames={tabNames} />
+      <Pressable>
+        <AppBarTab tabData={tabData} />
       </Pressable>
     </View>
   );
