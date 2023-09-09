@@ -1,12 +1,17 @@
 import Main from "./src/components/Main";
 import RepositoryList from "./src/components/RepositoryList";
-import { View } from "react-native";
+import { View, StyleSheet } from "react-native";
+
+const styles = StyleSheet.create({
+  wrapper: {
+    backgroundColor: "lightgrey",
+  },
+});
 
 const App = () => {
   return (
-    <View>
+    <View style={styles.wrapper}>
       <Main />
-
       <RepositoryList />
     </View>
   );

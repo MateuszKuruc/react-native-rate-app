@@ -4,20 +4,22 @@ import Constants from "expo-constants";
 const styles = StyleSheet.create({
   container: {
     paddingTop: Constants.statusBarHeight,
+    backgroundColor: "white",
   },
   avatar: {
     width: 50,
     height: 50,
+    borderRadius: 3,
   },
   upperWrapper: {
     flexDirection: "row",
-    borderWidth: 2,
+    paddingLeft: 10,
   },
   upperRightWrapper: {
     flexGrow: 0,
     alignItems: "flex-start",
     padding: 8,
-    gap: 3,
+    gap: 5,
   },
   languageInfo: {
     color: "white",
@@ -27,7 +29,14 @@ const styles = StyleSheet.create({
     backgroundColor: "#1877F2",
     borderRadius: 3,
   },
-  bottomWrapper: {},
+  bottomWrapper: {
+    flexDirection: "row",
+    padding: 8,
+    justifyContent: "space-around",
+  },
+  numbersContainer: {
+    flexDirection: "column",
+  },
 });
 
 const RepositoryItem = ({
@@ -41,16 +50,35 @@ const RepositoryItem = ({
   ownerAvatarUrl,
 }) => {
   return (
-    <View style={styles.upperWrapper}>
-      <Image style={styles.avatar} source={{ uri: ownerAvatarUrl }}></Image>
-      <View style={styles.upperRightWrapper}>
-        <Text style={{ fontWeight: "bold" }}>{fullName}</Text>
-        <Text>{description}</Text>
-        <View style={styles.languageWrapper}>
-          <Text style={styles.languageInfo}>{language}</Text>
+    <View style={styles.container}>
+      <View style={styles.upperWrapper}>
+        <Image style={styles.avatar} source={{ uri: ownerAvatarUrl }}></Image>
+        <View style={styles.upperRightWrapper}>
+          <Text style={{ fontWeight: "bold" }}>{fullName}</Text>
+          <Text>{description}</Text>
+          <View style={styles.languageWrapper}>
+            <Text style={styles.languageInfo}>{language}</Text>
+          </View>
         </View>
       </View>
-      <View styles={styles.bottomWrapper}></View>
+      <View style={styles.bottomWrapper}>
+        <View style={styles.numbersContainer}>
+          <Text>{stargazersCount}</Text>
+          <Text>Stars</Text>
+        </View>
+        <View style={styles.numbersContainer}>
+          <Text>{forksCount}</Text>
+          <Text>Forks</Text>
+        </View>
+        <View style={styles.numbersContainer}>
+          <Text>{reviewCount}</Text>
+          <Text>Reviews</Text>
+        </View>
+        <View style={styles.numbersContainer}>
+          <Text>{ratingAverage}</Text>
+          <Text>Rating</Text>
+        </View>
+      </View>
     </View>
   );
 };
