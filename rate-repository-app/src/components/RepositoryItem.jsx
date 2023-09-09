@@ -36,6 +36,14 @@ const styles = StyleSheet.create({
   },
   numbersContainer: {
     flexDirection: "column",
+    gap: 3,
+    alignItems: "center",
+  },
+  numbersDisplay: {
+    fontWeight: "bold",
+  },
+  resultsName: {
+    color: "grey",
   },
 });
 
@@ -49,13 +57,15 @@ const RepositoryItem = ({
   reviewCount,
   ownerAvatarUrl,
 }) => {
+  const starsNumber = (stargazersCount / 1000).toFixed(1);
+  const forksNumber = (forksCount / 1000).toFixed(1);
   return (
     <View style={styles.container}>
       <View style={styles.upperWrapper}>
         <Image style={styles.avatar} source={{ uri: ownerAvatarUrl }}></Image>
         <View style={styles.upperRightWrapper}>
           <Text style={{ fontWeight: "bold" }}>{fullName}</Text>
-          <Text>{description}</Text>
+          <Text style={{ color: "grey" }}>{description}</Text>
           <View style={styles.languageWrapper}>
             <Text style={styles.languageInfo}>{language}</Text>
           </View>
@@ -63,20 +73,20 @@ const RepositoryItem = ({
       </View>
       <View style={styles.bottomWrapper}>
         <View style={styles.numbersContainer}>
-          <Text>{stargazersCount}</Text>
-          <Text>Stars</Text>
+          <Text style={styles.numbersDisplay}>{starsNumber}k</Text>
+          <Text style={styles.resultsName}>Stars</Text>
         </View>
         <View style={styles.numbersContainer}>
-          <Text>{forksCount}</Text>
-          <Text>Forks</Text>
+          <Text style={styles.numbersDisplay}>{forksNumber}k</Text>
+          <Text style={styles.resultsName}>Forks</Text>
         </View>
         <View style={styles.numbersContainer}>
-          <Text>{reviewCount}</Text>
-          <Text>Reviews</Text>
+          <Text style={styles.numbersDisplay}>{reviewCount}</Text>
+          <Text style={styles.resultsName}>Reviews</Text>
         </View>
         <View style={styles.numbersContainer}>
-          <Text>{ratingAverage}</Text>
-          <Text>Rating</Text>
+          <Text style={styles.numbersDisplay}>{ratingAverage}</Text>
+          <Text style={styles.resultsName}>Rating</Text>
         </View>
       </View>
     </View>
