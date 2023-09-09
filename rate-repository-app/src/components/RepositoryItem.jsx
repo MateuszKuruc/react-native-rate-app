@@ -27,7 +27,8 @@ const styles = StyleSheet.create({
     padding: 3,
   },
   languageWrapper: {
-    backgroundColor: "#1877F2",
+    backgroundColor: "#0366d6",
+
     borderRadius: 3,
   },
   bottomWrapper: {
@@ -60,7 +61,7 @@ const RepositoryItem = ({
         <Image style={styles.avatar} source={{ uri: ownerAvatarUrl }}></Image>
         <View style={styles.upperRightWrapper}>
           <Text fontWeight="bold">{fullName}</Text>
-          <Text style={{ color: "grey" }}>{description}</Text>
+          <Text color="textSecondary">{description}</Text>
           <View style={styles.languageWrapper}>
             <Text style={styles.languageInfo}>{language}</Text>
           </View>
