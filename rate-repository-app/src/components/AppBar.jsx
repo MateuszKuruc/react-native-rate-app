@@ -1,6 +1,7 @@
 import { View, StyleSheet, Pressable } from "react-native";
 import Constants from "expo-constants";
 import AppBarTab from "./AppBarTab";
+import { ScrollView } from "react-native";
 
 const styles = StyleSheet.create({
   container: {
@@ -31,10 +32,16 @@ const AppBar = () => {
   return (
     <View style={styles.container}>
       <Pressable>
-        <AppBarTab tabData={tabData} />
+        <ScrollView horizontal>
+          <AppBarTab tabData={tabData} />
+        </ScrollView>
       </Pressable>
     </View>
   );
 };
 
 export default AppBar;
+
+{
+  /* <AppBarTab tabData={tabData} /> */
+}
