@@ -1,5 +1,6 @@
-import { View, StyleSheet, Pressable, Text } from "react-native";
+import { View, StyleSheet, Pressable } from "react-native";
 import Constants from "expo-constants";
+import AppBarTab from "./AppBarTab";
 
 const styles = StyleSheet.create({
   container: {
@@ -20,10 +21,12 @@ const styles = StyleSheet.create({
 });
 
 const AppBar = () => {
+  const tabNames = ["Repositories", "Sign in"];
   return (
     <View style={styles.container}>
       <Pressable>
-        <Text style={styles.text}>Repositories</Text>
+        {/* <Text style={styles.text}>Repositories</Text> */}
+        <AppBarTab tabNames={tabNames} />
       </Pressable>
     </View>
   );
