@@ -4,6 +4,7 @@ import theme from "../theme";
 const styles = StyleSheet.create({
   field: {
     borderColor: theme.colors.textSecondary,
+    borderRadius: 5,
     borderWidth: 1,
     fontFamily: theme.fonts.main,
     padding: 10,
