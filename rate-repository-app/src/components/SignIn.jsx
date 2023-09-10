@@ -1,4 +1,4 @@
-import Text from "./Text";
+// import Text from "./Text";
 import FormikTextInput from "./FormikTextInput";
 
 import { Pressable, View, StyleSheet, Button } from "react-native";

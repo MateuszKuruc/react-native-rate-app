@@ -7,12 +7,19 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     fontFamily: theme.fonts.main,
     padding: 10,
-    marginVertical: 10
+    marginVertical: 10,
   },
 });
 
 const TextInput = ({ style, error, ...props }) => {
   const textInputStyle = [styles.field, style];
+
+  console.log("lolool", props);
+  if (props.placeholder.includes("password")) {
+    return (
+      <NativeTextInput style={textInputStyle} {...props} secureTextEntry />
+    );
+  }
 
   return <NativeTextInput style={textInputStyle} {...props} />;
 };

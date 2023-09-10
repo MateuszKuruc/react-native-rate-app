@@ -41,7 +41,3 @@ const AppBar = () => {
 };
 
 export default AppBar;
-
-{
-  /* <AppBarTab tabData={tabData} /> */
-}
