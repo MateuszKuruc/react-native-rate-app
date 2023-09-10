@@ -1,7 +1,7 @@
 import Text from "./Text";
 import FormikTextInput from "./FormikTextInput";
 
-import { Pressable, View, StyleSheet } from "react-native";
+import { Pressable, View, StyleSheet, Button } from "react-native";
 import { Formik } from "formik";
 
 const initialValues = {
@@ -14,9 +14,7 @@ const LoginForm = ({ onSubmit }) => {
     <View>
       <FormikTextInput name="username" placeholder="username" />
       <FormikTextInput name="password" placeholder="password" />
-      <Pressable onPress={onSubmit}>
-        <Text>Sign in</Text>
-      </Pressable>
+      <Button title="Sign in" onPress={onSubmit} />
     </View>
   );
 };

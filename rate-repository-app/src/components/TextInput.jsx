@@ -7,6 +7,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     fontFamily: theme.fonts.main,
     padding: 10,
+    marginVertical: 10
   },
 });
 
